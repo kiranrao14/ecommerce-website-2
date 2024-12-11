@@ -1,33 +1,60 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+/* Timer adjustments for small screens */
+@media (max-width: 768px) {
+  .flash-sale-timer {
+    display: flex; /* Ensure timer stays in flexbox */
+    flex-wrap: wrap; /* Allow wrapping */
+    gap: 8px; /* Space between items */
+    justify-content: center; /* Center align on small screens */
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+  .flash-sale-timer div {
+    width: 60px; /* Adjust container size */
+    text-align: center; /* Center align text */
+  }
+
+  .flash-sale-timer h2 {
+    font-size: 1.25rem; /* Slightly smaller font for numbers */
+  }
+
+  .flash-sale-timer span {
+    font-size: 0.75rem; /* Smaller font for labels */
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Product card adjustments for small screens */
+@media (max-width: 768px) {
+  .product-card {
+    flex: 0 0 auto; /* Prevent shrinking */
+    min-width: 220px; /* Ensure minimum width */
+    margin: 0 auto; /* Center cards */
+  }
+ 
+  
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* Arrows adjustment for small screens */
+@media (max-width: 768px) {
+  #scroll-left-arrow,
+  #scroll-right-arrow {
+    display: none; /* Hide arrows on small screens */
+  }
+}
+
+@media (max-width: 640px) {
+  .product-box {
+     margin: 0 auto;
+    display: block;
+
+    
+  }
+
+  .product-grid {
+    display: grid;
+    justify-items: center;
   }
 }
